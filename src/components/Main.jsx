@@ -6,13 +6,21 @@ export default function Main() {
   const [character,setCharacter]=useState(null);
 
   useEffect(()=>{
-    const fetchCharacter = async ()=>{
-      const response = await fetch(`https://rickandmortyapi.com/api/character/1`);
-      const characterData = await response.json()
-      console.log(characterData)
-    }
     fetchCharacter();
   },[])
+
+  const fetchCharacter = async ()=> {
+    const characterArray = []
+    for(let i=1; i<=12;i++){
+      const response = await fetch(`https://rickandmortyapi.com/api/character/${i}`);
+      const characterData = await response.json()
+      const id = characterData.id;
+      const name = characterData.name
+      const imgUrl = characterData.image
+      characterArray.push({id,name,imgUrl})
+    }
+    console.log(characterArray)
+  }
   return (
     <div>
         <Header/>

@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Scores from "./Scores/Scores";
 import CardGrid from "./Cards/CardGrid";
+import shuffleArray from "./Utils/Utils";
 
 export default function Main() {
-  const [character, setCharacter] = useState(null);
+  const [character, setCharacter] = useState([]);
+  const [score, setScore] = useState(0);
+  const [clickedChar, setClickedChar] = useState([]);
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
-    fetchCharacter().then((characterArray) => {
-      setCharacter(characterArray);
-    });
+    const loadCards = async () => {
+      setCharacter(shuffleArray(await fetchCharacter()));
+    };
+    loadCards();
   }, []);
 
   const fetchCharacter = async () => {
@@ -27,14 +32,28 @@ export default function Main() {
     return characterArray;
   };
 
-  const handleCardClick = (e)=>{
-    console.log( e.target.parentNode.lastChild.textContent)
-  }
+  const handleCardClick = (e) => {
+    const charName = e.target.parentNode.lastChild.textContent;
+    playRound(charName);
+    setCharacter(shuffleArray(character));
+  };
+
+  const playRound = (charName) => {
+    if (clickedChar.includes(charName)) {
+      console.log("gameOver");
+    } else {
+      setClickedChar((prev) => [...prev, charName]);
+    }
+  };
   return (
     <div>
       <Header />
-      <Scores />
-      {character ? <CardGrid characters={character} onCardClick={handleCardClick} /> : <h1>Waiting...</h1>}
+      <Scores score={score} best={bestScore} />
+      {character ? (
+        <CardGrid characters={character} onCardClick={handleCardClick} />
+      ) : (
+        <h1>Waiting...</h1>
+      )}
     </div>
   );
 }

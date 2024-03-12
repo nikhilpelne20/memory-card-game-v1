@@ -1,12 +1,15 @@
 import React from "react";
 
-export default function Card({ img, name }) {
+export default function Card({ character, onCardClick }) {
   return (
-    <div className="w-[300px] h-[370px] bg-[#891652] flex flex-col items-center rounded-lg hover:scale-105 duration-300 cursor-pointer">
-      <div className="p-2">
-        <img className="rounded-lg" src={img} alt={name} />
-      </div>
-      <p className="text-2xl font-semibold mt-3 text-[#FFEDD8]">{name}</p>
+    <div
+      className="bg-[#891652] rounded-lg cursor-pointer hover:scale-105 duration-300"
+      onClick={onCardClick}
+    >
+      <img className="rounded-t-lg" src={character.imgUrl} alt={character.name} />
+      <p className="text-2xl font-semibold pt-3 pb-3 text-[#FFEDD8] text-center">
+        {character.name}
+      </p>
     </div>
   );
 }

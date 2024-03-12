@@ -26,11 +26,15 @@ export default function Main() {
     }
     return characterArray;
   };
+
+  const handleCardClick = (e)=>{
+    console.log( e.target.parentNode.lastChild.textContent)
+  }
   return (
     <div>
       <Header />
       <Scores />
-      {character ? <CardGrid character={character} /> : <h1>Waiting...</h1>}
+      {character ? <CardGrid characters={character} onCardClick={handleCardClick} /> : <h1>Waiting...</h1>}
     </div>
   );
 }

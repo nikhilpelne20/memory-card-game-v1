@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
 export default function Scores() {
   return (
-    <div className='text-xl font-semibold text-cyan-300 bg-gray-700 pl-2'>
-        <p>Score:</p>
-        <p>Best score:</p>
+    <div className="text-2xl font-semibold text-[#FFEDD8] bg-[#240A34] flex justify-center gap-8 pt-[30px] pb-[40px]">
+      <p>Score: 0</p>
+      <p>Best score: 0</p>
     </div>
-  )
+  );
 }

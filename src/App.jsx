@@ -1,8 +1,8 @@
-import Main from "./components/Main"
+import Main from "./components/Main";
 
 function App() {
-  //Building a memory card game 
-  // components to build 
+  //Building a memory card game
+  // components to build
   // --Header Section(logo)
   // --Score Section (Best Score + current Score)
   // --Card Section (Make a grid of 4*4)
@@ -10,9 +10,9 @@ function App() {
 
   return (
     <>
-     <Main/>
+      <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

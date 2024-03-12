@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 
-export default function Card({img,name}) {
+export default function Card({ img, name }) {
   return (
-    <div className='w-[250px] h-[300px] bg-gray-400'>
-      <img className='w-[250px] h-[250px]' src={img} alt={name}/>
-      <p>{name}</p>
+    <div className="w-[300px] h-[370px] bg-[#891652] flex flex-col items-center rounded-lg hover:shadow-yellow">
+      <div className="p-2">
+        <img className="rounded-lg" src={img} alt={name} />
+      </div>
+      <p className="text-2xl font-semibold mt-3 text-[#FFEDD8]">{name}</p>
     </div>
-  )
+  );
 }

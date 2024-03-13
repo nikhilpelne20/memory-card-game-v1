@@ -37,7 +37,7 @@ npm install
 
 ## Credits
 
-- This project utilizes the Rick and Morty API for character data.
+- This project utilizes the Rick and Morty API for character data. Link:- https://rickandmortyapi.com/
 - React Icons API for displaying icons.
 - Developed using the Vite build tool for efficient and fast development.
 

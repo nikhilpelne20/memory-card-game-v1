@@ -3,7 +3,7 @@ import React from "react";
 export default function Card({ character, handleCardClick }) {
   return (
     <div
-      className="bg-[#891652] rounded-lg cursor-pointer hover:scale-105 duration-300"
+      className="bg-[#891652] rounded-lg cursor-pointer hover:scale-105 duration-300 h-[285px]"
       onClick={handleCardClick}
     >
       <img

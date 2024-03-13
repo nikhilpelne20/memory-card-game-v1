@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import Scores from "./Scores/Scores";
+import ScoreGrid from "./Scores/ScoreGrid";
 import CardGrid from "./Cards/CardGrid";
 import shuffleArray from "./Utils/Utils";
 
 export default function Main() {
-  const [character, setCharacter] = useState([]);
-  const [score, setScore] = useState(0);
-  const [clickedChar, setClickedChar] = useState([]);
+  const characterCount = 12;
+  const [characters, setCharacters] = useState([]);
+  const [clickedCharacters, setClickedCharacters] = useState([]);
+  const [CurrentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     const loadCards = async () => {
-      setCharacter(shuffleArray(await fetchCharacter()));
+      setCharacters(shuffleArray(await fetchCharacter(characterCount)));
     };
     loadCards();
   }, []);
 
-  const fetchCharacter = async () => {
+  const fetchCharacter = async (characterCount) => {
     const characterArray = [];
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= characterCount; i++) {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character/${i}`
       );
@@ -35,31 +36,31 @@ export default function Main() {
   const handleCardClick = (e) => {
     const charName = e.target.parentNode.lastChild.textContent;
     playRound(charName);
-    setCharacter(shuffleArray(character));
+    setCharacters(shuffleArray(characters));
   };
 
   const playRound = (charName) => {
-    if (clickedChar.includes(charName)) {
+    if (clickedCharacters.includes(charName)) {
       gameOver();
     } else {
-      const currScore = score + 1;
+      const currScore = CurrentScore + 1;
       if (currScore > bestScore) {
         setBestScore((prev) => prev + 1);
       }
-      setScore((prev) => prev + 1);
-      setClickedChar((prev) => [...prev, charName]);
+      setCurrentScore((prev) => prev + 1);
+      setClickedCharacters((prev) => [...prev, charName]);
     }
   };
 
   const gameOver = () => {
-    setScore(0);
-    setClickedChar([]);
+    setCurrentScore(0);
+    setClickedCharacters([]);
   };
   return (
     <div>
       <Header />
-      <Scores score={score} best={bestScore} />
-      <CardGrid characters={character} onCardClick={handleCardClick} />
+      <ScoreGrid currentScore={CurrentScore} bestScore={bestScore} />
+      <CardGrid characters={characters} onCardClick={handleCardClick} />
     </div>
   );
 }

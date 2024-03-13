@@ -6,10 +6,10 @@ export default function CardGrid({ characters, onCardClick }) {
     <Card
       character={character}
       key={character.id}
-      onCardClick={onCardClick}
+      handleCardClick={onCardClick}
     />
   ));
-  
+
   return (
     <div className="bg-[#240A34] pb-[50px]">
       <div className="grid grid-cols-4 w-[1600px] m-auto justify-items-center gap-y-16">

@@ -12,10 +12,10 @@ Rick and Morty Memory Card is a web-based memory card game built using React.js.
 ## Installation
 
 1. Clone the repository:
-git clone "git@github.com:nikhilpelne20/memory-card-game-v1.git"
+git clone "git@github.com:nikhilpelne20/rickandmorty-memory-game.git"
 
 2. Navigate to the project directory:
-cd  MEMORY-CARD-GAME-V1
+cd  rickandmorty-memory-game
 
 3. Install dependencies:
 npm install

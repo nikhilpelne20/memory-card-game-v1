@@ -11,10 +11,8 @@ export default function CardGrid({ characters, onCardClick }) {
   ));
 
   return (
-    <div className="bg-[#240A34] pb-[50px]">
-      <div className="grid grid-cols-4 w-[1600px] m-auto justify-items-center gap-y-16">
-        {allCharacter}
-      </div>
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 justify-items-center gap-y-16 gap-x-16 max-w-[1200px] m-auto p-[40px]">
+      {allCharacter}
     </div>
   );
 }

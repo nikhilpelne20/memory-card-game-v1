@@ -7,7 +7,7 @@ export default function Card({ character, handleCardClick }) {
       onClick={handleCardClick}
     >
       <img className="rounded-t-lg" src={character.imgUrl} alt={character.name} />
-      <p className="text-2xl font-semibold pt-3 pb-3 text-[#FFEDD8] text-center">
+      <p className="text-xl font-semibold pt-3 pb-3 text-[#FFEDD8] text-center">
         {character.name}
       </p>
     </div>

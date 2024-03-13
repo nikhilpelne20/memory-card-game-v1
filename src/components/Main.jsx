@@ -5,7 +5,7 @@ import CardGrid from "./Cards/CardGrid";
 import shuffleArray from "./Utils/Utils";
 
 export default function Main() {
-  const characterCount = 12;
+  const characterCount = 24;
   const [characters, setCharacters] = useState([]);
   const [clickedCharacters, setClickedCharacters] = useState([]);
   const [CurrentScore, setCurrentScore] = useState(0);
@@ -20,7 +20,7 @@ export default function Main() {
 
   const fetchCharacter = async (characterCount) => {
     const characterArray = [];
-    for (let i = 1; i <= characterCount; i++) {
+    for (let i = 13; i <= characterCount; i++) {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character/${i}`
       );
@@ -58,7 +58,6 @@ export default function Main() {
   };
   return (
     <div>
-      <Header />
       <ScoreGrid currentScore={CurrentScore} bestScore={bestScore} />
       <CardGrid characters={characters} onCardClick={handleCardClick} />
     </div>

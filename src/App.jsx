@@ -1,4 +1,4 @@
-import Main from "./components/Main";
+import MainApp from "./components/MainApp";
 
 function App() {
   //Building a memory card game
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Main />
+      <MainApp/>
     </>
   );
 }

@@ -6,7 +6,11 @@ export default function Card({ character, handleCardClick }) {
       className="bg-[#891652] rounded-lg cursor-pointer hover:scale-105 duration-300"
       onClick={handleCardClick}
     >
-      <img className="rounded-t-lg" src={character.imgUrl} alt={character.name} />
+      <img
+        className="rounded-t-lg"
+        src={character.imgUrl}
+        alt={character.name}
+      />
       <p className="text-xl font-semibold pt-3 pb-3 text-[#FFEDD8] text-center">
         {character.name}
       </p>

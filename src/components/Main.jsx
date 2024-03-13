@@ -41,7 +41,7 @@ export default function Main() {
 
   const playRound = (charName) => {
     if (clickedCharacters.includes(charName)) {
-      gameOver();
+      resetGame();
     } else {
       const currScore = CurrentScore + 1;
       if (currScore > bestScore) {
@@ -52,7 +52,7 @@ export default function Main() {
     }
   };
 
-  const gameOver = () => {
+  const resetGame = () => {
     setCurrentScore(0);
     setClickedCharacters([]);
   };

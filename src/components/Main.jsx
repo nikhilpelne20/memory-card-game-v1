@@ -40,20 +40,26 @@ export default function Main() {
 
   const playRound = (charName) => {
     if (clickedChar.includes(charName)) {
-      console.log("gameOver");
+      gameOver();
     } else {
+      const currScore = score + 1;
+      if (currScore > bestScore) {
+        setBestScore((prev) => prev + 1);
+      }
+      setScore((prev) => prev + 1);
       setClickedChar((prev) => [...prev, charName]);
     }
+  };
+
+  const gameOver = () => {
+    setScore(0);
+    setClickedChar([]);
   };
   return (
     <div>
       <Header />
       <Scores score={score} best={bestScore} />
-      {character ? (
-        <CardGrid characters={character} onCardClick={handleCardClick} />
-      ) : (
-        <h1>Waiting...</h1>
-      )}
+      <CardGrid characters={character} onCardClick={handleCardClick} />
     </div>
   );
 }

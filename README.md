@@ -1,8 +1,43 @@
-# React + Vite
+# Rick and Morty Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rick and Morty Memory Card is a web-based memory card game built using React.js. The game utilizes the Rick and Morty API to fetch character data, and it features dynamic card generation, score tracking, and responsive design.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- React Icons API
+- Vite build tool
+- Rick and Morty API
+
+## Installation
+
+1. Clone the repository:
+git clone "git@github.com:nikhilpelne20/memory-card-game-v1.git"
+
+2. Navigate to the project directory:
+cd  MEMORY-CARD-GAME-V1
+
+3. Install dependencies:
+npm install
+
+## Usage
+
+1. Start the development server: npm run dev
+
+2. Open your web browser and go to http://localhost:{PORT}
+
+3. Enjoy playing the Rick and Morty Memory Card game!
+
+## Features
+
+- Dynamic card generation using data from the Rick and Morty API
+- Score tracking and best score display
+- Responsive design for seamless gameplay on various devices
+- Utilizes React.js hooks such as useEffect and useState for state management
+
+## Credits
+
+- This project utilizes the Rick and Morty API for character data.
+- React Icons API for displaying icons.
+- Developed using the Vite build tool for efficient and fast development.
+
